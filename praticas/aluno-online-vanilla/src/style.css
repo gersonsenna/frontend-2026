@@ -21,9 +21,10 @@ aside {
   background-color: var(--cor-fundo);
   height: 100vh;
   padding: 24px;
+  display: none;
 
-  @media (width <= 768px) {
-    display: none;
+  @media (width >= 768px) {
+    display: block;
   }
 }
 
