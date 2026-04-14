@@ -105,6 +105,7 @@ form > img {
   height: 64px;
   margin: 0 auto;
 }
+
 form > h1 {
   text-align: center;
   margin-bottom: 16px;
@@ -125,8 +126,8 @@ input {
   margin-bottom: 12px;
 }
 
-#emailError,
-#senhaError {
+#email-error,
+#senha-error {
   font-size: 14px;
   color: red;
   margin-bottom: 12px;
