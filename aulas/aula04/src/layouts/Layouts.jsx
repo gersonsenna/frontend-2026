@@ -1,11 +1,17 @@
+import { Outlet } from "react-router";
 import Menu from "../components/Menu";
 
-function Layouts() {
-  return (<>
-    <aside>
+function Layout() {
+  return (
+    <>
+      <aside>
         <Menu />
-    </aside>
-    <main>{/* Aqui vão as páginas renderizadas */}</main>
+      </aside>
+      <main>
+        <Outlet />
+      </main>
     </>
-    );
-};  
+  );
+}
+
+export default Layout;

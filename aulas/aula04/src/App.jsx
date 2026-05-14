@@ -3,18 +3,28 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Settings from "./pages/Settings";
 import Erro404 from "./pages/Erro404";
+import Layout from "./layouts/Layout";
+import Login from "./pages/Login";
+import Perfil from "./pages/Perfil";
+import { useContext } from "react";
 
 function App() {
+  const { logado } = useContext(AuthContext); //pegou do contexto
+
   return (
     <Routes>
-      <Route path="/" element={<Layouts />}> {/* template */}
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="settings" element={<Settings />} />
-      </Route>
+      {logado ? (
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="perfil/:id" element={<Perfil />} />
+          <Route path="about" element={<About />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+      ) : (
+        <Route path="/" element={<Login />} />
+      )}
       <Route path="*" element={<Erro404 />} />
     </Routes>
-
   );
 }
 
